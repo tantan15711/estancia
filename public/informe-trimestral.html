@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro / Informe Trimestral - Universidad Politécnica de Tapachula</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Encabezado con logo y títulos -->
+        <div class="header">
+            <div class="logo-container">
+                <img src="lince.png" alt="Universidad Politécnica de Tapachula" class="logo">
+            </div>
+            <div class="title-container">
+                <h1 class="university-title">Universidad Politécnica de Tapachula</h1>
+                <h2 class="document-title">Registro / Informe Trimestral</h2>
+            </div>
+            <div class="department-info">
+                Dirección de Planeación Educativa<br>
+            </div>
+        </div>
+        
+        <form id="trimestralForm">
+            <!-- Sección de Trimestre -->
+            <div class="section-title">Trimestre (Marcar con una X)</div>
+            <table class="bg-gray">
+                <tr>
+                    <td width="151" rowspan="2">
+                        <p align="right"><b>Trimestre:</b></p>
+                        <p align="right"><b>(Marcar con una X)</b></p>
+                    </td>
+                    <td width="76">
+                        <p><b>1</b></p>
+                        <p>(Ene-Mzo)</p>
+                    </td>
+                    <td width="66">
+                        <p><b>2</b></p>
+                        <p>(Abr-Jun)</p>
+                    </td>
+                    <td width="76">
+                        <p><b>3</b></p>
+                        <p>(Jul-Sept)</p>
+                    </td>
+                    <td width="64">
+                        <p><b>4</b></p>
+                        <p>(Oct-Dic)</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="radio" name="trimestre" value="1"></td>
+                    <td><input type="radio" name="trimestre" value="2"></td>
+                    <td><input type="radio" name="trimestre" value="3"></td>
+                    <td><input type="radio" name="trimestre" value="4"></td>
+                </tr>
+            </table>
+
+            <!-- Sección de Área de Trabajo -->
+            <table class="bg-gray">
+                <tr>
+                    <td width="18%">
+                        <p align="center"><b>Área Trabajo:</b></p>
+                    </td>
+                    <td width="47%" colspan="3">
+                        <input type="text" name="area_trabajo" placeholder="Ingrese el área de trabajo">
+                    </td>
+                    <td width="13%">
+                        <p align="right"><b>Mes y año:</b></p>
+                    </td>
+                    <td width="20%">
+                        <input type="text" name="mes_anio" placeholder="Ej: Enero 2023">
+                    </td>
+                </tr>
+                <tr>
+                    <td width="18%">
+                        <p align="center"><b>PIDE</b></p>
+                    </td>
+                    <td width="12%">
+                        <select name="pide" id="pide">
+                            <option value="">Seleccione PIDE</option>
+                            <optgroup label="Eje I — Atracción y desarrollo de talento humano">
+                                <option value="Ofertar programas pertinentes, acreditados y de calidad">Ofertar programas pertinentes, acreditados y de calidad</option>
+                                <option value="Ofertar posgrados dentro del Sistema Nacional de Posgrados">Ofertar posgrados dentro del Sistema Nacional de Posgrados</option>
+                                <option value="Implementar el programa de becas institucional">Implementar el programa de becas institucional</option>
+                                <option value="Fortalecer la planta académica mediante incorporación de PTC">Fortalecer la planta académica mediante incorporación de PTC</option>
+                            </optgroup>
+                            <optgroup label="Eje II — Formación integral, innovadora y vinculada internacionalmente">
+                                <option value="Impulsar movilidad docente y estudiantil">Impulsar movilidad docente y estudiantil</option>
+                                <option value="Garantizar una formación integral y ética">Garantizar una formación integral y ética</option>
+                                <option value="Implementar el Programa Lince de Responsabilidad Social">Implementar el Programa Lince de Responsabilidad Social</option>
+                                <option value="Desarrollar y participar en redes de colaboración nacionales e internacionales">Desarrollar y participar en redes de colaboración nacionales e internacionales</option>
+                                <option value="Generar eventos de innovación tecnológica">Generar eventos de innovación tecnológica</option>
+                                <option value="Difundir innovaciones tecnológicas de la universidad">Difundir innovaciones tecnológicas de la universidad</option>
+                            </optgroup>
+                            <optgroup label="Eje III — Crecimiento sostenible a largo plazo">
+                                <option value="Gestionar e implementar infraestructura educativa según el Plan Maestro 2030">Gestionar e implementar infraestructura educativa según el Plan Maestro 2030</option>
+                                <option value="Integrar sistemas de gestión para la excelencia en los servicios">Integrar sistemas de gestión para la excelencia en los servicios</option>
+                                <option value="Capacitación y certificación continua del personal">Capacitación y certificación continua del personal</option>
+                                <option value="Generar proyectos institucionales y de inversión con Metodología de Marco Lógico">Generar proyectos institucionales y de inversión con Metodología de Marco Lógico</option>
+                                <option value="Desarrollar el Programa Anual de Capacitación según necesidades institucionales">Desarrollar el Programa Anual de Capacitación según necesidades institucionales</option>
+                            </optgroup>
+                        </select>
+                    </td>
+                    <td width="16%">
+                        <p align="center"><b>CACEI</b></p>
+                    </td>
+                    <td width="18%">
+                        <select name="cacei" id="cacei">
+                            <option value="">Seleccione CACEI</option>
+                            <optgroup label="Categoría 1 — Estudiantes">
+                                <option value="Admisión">Admisión</option>
+                                <option value="Revalidación, equivalencia y reconocimiento">Revalidación, equivalencia y reconocimiento</option>
+                                <option value="Privacidad de datos del estudiante">Privacidad de datos del estudiante</option>
+                                <option value="Integridad académica">Integridad académica</option>
+                                <option value="Trayectoria escolar">Trayectoria escolar</option>
+                                <option value="Asesoría y tutoría">Asesoría y tutoría</option>
+                                <option value="Titulación">Titulación</option>
+                                <option value="Comportamientos apropiados">Comportamientos apropiados</option>
+                            </optgroup>
+                            <optgroup label="Categoría 2 — Plan de estudios">
+                                <option value="Organización curricular">Organización curricular</option>
+                                <option value="Problemas de ingeniería complejos">Problemas de ingeniería complejos</option>
+                                <option value="Experiencia en diseño">Experiencia en diseño</option>
+                                <option value="Flexibilidad curricular">Flexibilidad curricular</option>
+                            </optgroup>
+                            <optgroup label="Categoría 3 — Objetivos educacionales">
+                                <option value="Definición y difusión de objetivos educacionales">Definición y difusión de objetivos educacionales</option>
+                                <option value="Valoración de los objetivos educacionales">Valoración de los objetivos educacionales</option>
+                            </optgroup>
+                            <optgroup label="Categoría 4 — Atributos de egreso">
+                                <option value="Definición y difusión de los atributos de egreso">Definición y difusión de los atributos de egreso</option>
+                                <option value="Valoración de los atributos">Valoración de los atributos</option>
+                                <option value="Logro de los atributos">Logro de los atributos</option>
+                            </optgroup>
+                            <optgroup label="Categoría 5 — Personal académico">
+                                <option value="Perfil del personal académico">Perfil del personal académico</option>
+                                <option value="Suficiencia del personal">Suficiencia del personal</option>
+                                <option value="Distribución de actividades">Distribución de actividades</option>
+                                <option value="Evaluación y desarrollo del personal">Evaluación y desarrollo del personal</option>
+                                <option value="Autoridad y responsabilidad del personal en el plan de estudios">Autoridad y responsabilidad del personal en el plan de estudios</option>
+                                <option value="Selección, permanencia y retención del personal">Selección, permanencia y retención del personal</option>
+                            </optgroup>
+                            <optgroup label="Categoría 6 — Soporte institucional">
+                                <option value="Infraestructura y equipamiento">Infraestructura y equipamiento</option>
+                                <option value="Liderazgo institucional">Liderazgo institucional</option>
+                                <option value="Recursos financieros">Recursos financieros</option>
+                            </optgroup>
+                            <optgroup label="Categoría 7 — Mejora continua">
+                                <option value="Definición y justificación de grupos de interés">Definición y justificación de grupos de interés</option>
+                                <option value="Proceso de mejora">Proceso de mejora</option>
+                            </optgroup>
+                            <optgroup label="Categoría 8 — Área disciplinar">
+                                <option value="Aeronáutica">Aeronáutica</option>
+                                <option value="Agrícola">Agrícola</option>
+                                <option value="Alimentos">Alimentos</option>
+                                <option value="Ambiental">Ambiental</option>
+                                <option value="Biomédica">Biomédica</option>
+                                <option value="Biotecnología">Biotecnología</option>
+                                <option value="Ciberseguridad">Ciberseguridad</option>
+                                <option value="Civil">Civil</option>
+                                <option value="Computación">Computación</option>
+                                <option value="Eléctrica/Electrónica/Telecom">Eléctrica/Electrónica/Telecom</option>
+                                <option value="Física">Física</option>
+                                <option value="Óptica">Óptica</option>
+                                <option value="Geología">Geología</option>
+                                <option value="Gestión empresarial">Gestión empresarial</option>
+                                <option value="Industrial">Industrial</option>
+                                <option value="Manufactura">Manufactura</option>
+                                <option value="Mecánica">Mecánica</option>
+                                <option value="Mecatrónica">Mecatrónica</option>
+                                <option value="Metalúrgica">Metalúrgica</option>
+                                <option value="Minas">Minas</option>
+                                <option value="Naval">Naval</option>
+                                <option value="Nuclear">Nuclear</option>
+                                <option value="Oceánica">Oceánica</option>
+                                <option value="Petrolera">Petrolera</option>
+                                <option value="Química">Química</option>
+                                <option value="Geomática">Geomática</option>
+                            </optgroup>
+                        </select>
+                    </td>
+                    <td width="13%">
+                        <p align="right"><b>SEAES</b></p>
+                    </td>
+                    <td width="20%">
+                        <select name="seaes" id="seaes">
+                            <option value="">Seleccione SEAES</option>
+                            <optgroup label="Criterios transversales SEAES">
+                                <option value="Formación profesional de los estudiantes">Formación profesional de los estudiantes</option>
+                                <option value="Profesionalización de la docencia">Profesionalización de la docencia</option>
+                                <option value="Programas educativos TSU/PA/Licenciatura">Programas educativos TSU/PA/Licenciatura</option>
+                                <option value="Programas de investigación y posgrado">Programas de investigación y posgrado</option>
+                                <option value="Instituciones de educación superior">Instituciones de educación superior</option>
+                            </optgroup>
+                            <optgroup label="Indicadores del Ámbito 1 (Formación profesional)">
+                                <option value="Incorporación de rasgos del SEAES al perfil de egreso">Incorporación de rasgos del SEAES al perfil de egreso</option>
+                                <option value="Mecanismos para evaluar sistemáticamente los rasgos del perfil">Mecanismos para evaluar sistemáticamente los rasgos del perfil</option>
+                                <option value="Tipo de evaluación utilizada">Tipo de evaluación utilizada</option>
+                                <option value="Porcentaje de egresados que adquirieron la formación prevista">Porcentaje de egresados que adquirieron la formación prevista</option>
+                            </optgroup>
+                            <optgroup label="Indicadores del Ámbito 2 (Profesionalización de la docencia)">
+                                <option value="Composición porcentual de la planta académica según equidad, inclusión e interculturalidad">Composición porcentual de la planta académica según equidad, inclusión e interculturalidad</option>
+                                <option value="Porcentaje de profesorado en acciones de profesionalización vinculadas al SEAES">Porcentaje de profesorado en acciones de profesionalización vinculadas al SEAES</option>
+                                <option value="Porcentaje de profesorado en proyectos de innovación relacionados con SEAES">Porcentaje de profesorado en proyectos de innovación relacionados con SEAES</option>
+                            </optgroup>
+                            <optgroup label="Indicadores del Ámbito 3 (Programas educativos)">
+                                <option value="Composición porcentual de la población escolar según criterios SEAES">Composición porcentual de la población escolar según criterios SEAES</option>
+                                <option value="Trayectorias escolares (ingreso, permanencia, abandono, rezago, reprobación, egreso, titulación)">Trayectorias escolares (ingreso, permanencia, abandono, rezago, reprobación, egreso, titulación)</option>
+                                <option value="Diseño curricular que incorpore criterios SEAES">Diseño curricular que incorpore criterios SEAES</option>
+                                <option value="Porcentaje de unidades terminales dedicadas a consolidar el perfil de egreso SEAES">Porcentaje de unidades terminales dedicadas a consolidar el perfil de egreso SEAES</option>
+                                <option value="Porcentaje de estudiantes en proyectos de innovación vinculados al SEAES">Porcentaje de estudiantes en proyectos de innovación vinculados al SEAES</option>
+                            </optgroup>
+                            <optgroup label="Indicadores del Ámbito 4 (Investigación y posgrado)">
+                                <option value="Porcentaje de proyectos de investigación que consideran criterios SEAES">Porcentaje de proyectos de investigación que consideran criterios SEAES</option>
+                                <option value="Porcentaje de productos de investigación relacionados al SEAES">Porcentaje de productos de investigación relacionados al SEAES</option>
+                                <option value="Composición del personal académico que participa en investigación con criterios SEAES">Composición del personal académico que participa en investigación con criterios SEAES</option>
+                                <option value="Porcentaje de estudiantes que participan en investigación relacionada con SEAES">Porcentaje de estudiantes que participan en investigación relacionada con SEAES</option>
+                            </optgroup>
+                            <optgroup label="Indicadores del Ámbito 5 (Institución de educación superior)">
+                                <option value="Composición porcentual del personal directivo y administrativo según equidad, inclusión e interculturalidad">Composición porcentual del personal directivo y administrativo según equidad, inclusión e interculturalidad</option>
+                                <option value="Número de iniciativas y acciones institucionales que incorporan criterios SEAES">Número de iniciativas y acciones institucionales que incorporan criterios SEAES</option>
+                                <option value="Acciones en planes y programas institucionales que impulsan criterios SEAES">Acciones en planes y programas institucionales que impulsan criterios SEAES</option>
+                                <option value="Acciones de sensibilización para la comunidad respecto a los criterios SEAES">Acciones de sensibilización para la comunidad respecto a los criterios SEAES</option>
+                            </optgroup>
+                        </select>
+                    </td>
+                </tr>
+            </table>
+
+            <!-- Contenedor para múltiples acciones -->
+            <div id="acciones-container">
+                <!-- Primera acción (por defecto) -->
+                <div class="accion" data-id="1">
+                    <div class="accion-header">
+                        <h3>Acción #1</h3>
+                        <button type="button" class="eliminar-accion" style="display:none;">Eliminar Acción</button>
+                    </div>
+
+                    <!-- Sección de Acción -->
+                    <table>
+                        <tr>
+                            <td width="22%" rowspan="2" class="bg-light-gray">
+                                <p align="center"><b>Número de Acción:</b></p>
+                            </td>
+                            <td width="11%" colspan="2" rowspan="2">
+                                <input type="text" name="numero_accion_1" placeholder="Número">
+                            </td>
+                            <td width="52%" colspan="4" rowspan="2" class="bg-light-gray">
+                                <p align="center"><b>Acción especificada en el PAT</b></p>
+                                <p align="center"><b>(Marcar con una X)</b></p>
+                            </td>
+                            <td width="6%" class="bg-light-gray">
+                                <p align="center"><b>SI</b></p>
+                            </td>
+                            <td width="6%" class="bg-light-gray">
+                                <p align="center"><b>NO</b></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input type="radio" name="accion_pat_1" value="si"></td>
+                            <td><input type="radio" name="accion_pat_1" value="no"></td>
+                        </tr>
+                        <tr>
+                            <td colspan="9">
+                                <p><i>[Indicar la acción especificada en el Programa Anual de Trabajo vigente y marcar con una X el recuadro SI]</i></p>
+                                <p><b>Nota:</b> Si reporta actividades de acciones no especificadas en el PAT vigente, describir la acción y marcar con una X en el recuadro NO.</p>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <!-- Descripción de Actividades Desarrolladas -->
+                    <table>
+                        <tr>
+                            <td colspan="9" class="bg-light-gray">
+                                <p align="center"><b>Descripción de Actividades Desarrolladas</b></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="9">
+                                <textarea name="descripcion_actividades_1" rows="6" placeholder="[Redactar de forma precisa las actividades realizadas para alcanzar las metas en el trimestre]"></textarea>
+                                <p class="note">En los casos en las que no se haya cumplido al 100% alguna de las metas programadas, redactar las actividades realizadas, así como el porcentaje de avance o una descripción fundamentada del motivo por el cual no se realizaron las actividades correspondientes.</p>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <!-- Metas y Cumplimiento -->
+                    <table>
+                        <tr>
+                            <td width="25%" colspan="2" class="bg-medium-gray">
+                                <p align="center"><b>Programado (P):</b></p>
+                            </td>
+                            <td width="28%" colspan="2" class="bg-medium-gray">
+                                <p align="center"><b>Realizado (R):</b></p>
+                            </td>
+                            <td width="20%" class="bg-medium-gray">
+                                <p align="center"><b>Cumplimiento ((R/P)*100):</b></p>
+                            </td>
+                            <td width="25%" colspan="4" class="bg-medium-gray">
+                                <p align="center"><b>Justificación de incumplimiento</b></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="25%" colspan="2">
+                                <input type="number" name="programado_1" class="programado" placeholder="Meta trimestral" step="0.01" min="0">
+                                <p class="note">(Meta trimestral)</p>
+                            </td>
+                            <td width="28%" colspan="2">
+                                <input type="number" name="realizado_1" class="realizado" placeholder="Número de acciones realizadas" step="0.01" min="0">
+                                <p class="note">(Número de acciones realizadas en el trimestre)</p>
+                            </td>
+                            <td width="20%">
+                                <input type="text" name="cumplimiento_1" class="cumplimiento" placeholder="% de cumplimiento" readonly>
+                            </td>
+                            <td width="25%" colspan="4">
+                                <textarea name="justificacion_1" rows="3" placeholder="Justificación de incumplimiento (describir cual fue el motivo por el cual no se realizó la acción; o en su caso, que es lo que falta por hacer, asimismo, colocar la fecha tentativa de cumplimiento)."></textarea>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <!-- Impacto de la actividad -->
+                    <table>
+                        <tr>
+                            <td width="25%" colspan="2" rowspan="3" class="bg-medium-gray">
+                                <p><b>Impacto de la actividad:</b></p>
+                            </td>
+                            <td width="60%" colspan="4" rowspan="3">
+                                <textarea name="impacto_1" rows="4" placeholder="(Colocar los resultados obtenidos tras el cumplimiento de las actividades realizadas) (Identificar qué y quienes se han beneficiado de las acciones realizadas)"></textarea>
+                            </td>
+                            <td width="13%" colspan="3">
+                                <p align="center"><b>Destacar para informe de Gobierno</b></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="7%" colspan="2">
+                                <p align="center"><b>SI</b></p>
+                            </td>
+                            <td width="6%">
+                                <p align="center"><b>NO</b></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="7%" colspan="2">
+                                <input type="radio" name="destacar_informe_1" value="si">
+                            </td>
+                            <td width="6%">
+                                <input type="radio" name="destacar_informe_1" value="no">
+                            </td>
+                        </tr>
+                    </table>
+
+                    <!-- Fecha de Realización -->
+                    <table>
+                        <tr>
+                            <td width="25%" colspan="2" class="bg-medium-gray">
+                                <p><b>Fecha de Realización:</b></p>
+                            </td>
+                            <td width="74%" colspan="7">
+                                <input type="date" name="fecha_realizacion_1">
+                            </td>
+                        </tr>
+                    </table>
+
+                    <!-- Evidencia fotográfica -->
+                    <table>
+                        <tr>
+                            <td colspan="9" class="bg-medium-gray">
+                                <p><b>Evidencia fotográfica:</b></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="9">
+                                <div class="photo-evidence">
+                                    <p><b>Agregar las fotografías más representativas e Incluir enlace a Drive con carpetas para cada acción con fotografías en formato JPG, utilizando el número de acción con la nomenclatura siguiente:</b></p>
+                                    <p><b>[NúmTrimeste_NúmAcción]</b></p>
+                                    <p><b>Ejemplo: 1_2 (Para trimestre 1, acción 2)</b></p>
+                                    
+                                    <div>
+                                        <label for="foto_evidencia_1">Subir fotografías (múltiples):</label>
+                                        <input type="file" class="foto_evidencia" name="foto_evidencia_1" accept="image/*" multiple>
+                                        <div class="photo-preview-container" data-id="1"></div>
+                                    </div>
+                                    
+                                    <div style="margin-top: 10px;">
+                                        <label for="enlace_drive_1">Enlace a Google Drive:</label>
+                                        <input type="url" class="drive_link" name="drive_link_1" placeholder="https://drive.google.com/drive/folders/..." style="width: 100%;">
+                                        <p class="note">Ingresa el enlace completo a la carpeta de Google Drive con las evidencias</p>
+                                        <div class="drive-link-container" data-id="1" style="margin-top: 5px;"></div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                    <hr class="separador-accion">
+                </div>
+            </div>
+
+            <!-- Botones de acción -->
+            <div class="action-buttons">
+                <button type="button" id="agregarAccion">Agregar otra acción</button>
+                <button type="button" id="guardarBorrador">Guardar borrador</button>
+                <button type="button" id="generarWord">Descargar Word</button>
+            </div>
+
+            <!-- Loading indicator -->
+            <div id="loading" class="loading">
+                <div class="spinner"></div>
+                <p>Generando documento...</p>
+            </div>
+
+            <!-- Firmas integradas en Elaboró y Vo.Bo -->
+            <div class="form-footer">
+                <div class="signature-area">
+                    <p><b>Elaboró</b></p>
+                    <div class="signature-input-container">
+                        <input type="text" name="elaboro_nombre" placeholder="Nombre" class="signature-name-input">
+                        <input type="file" id="elaboro_firma" accept="image/*" class="signature-file-input" style="display: none;" multiple>
+                        <button type="button" class="signature-upload-btn" onclick="document.getElementById('elaboro_firma').click()">Agregar Firma</button>
+                    </div>
+                    <div id="elaboro_firma_preview" class="signature-preview-container"></div>
+                </div>
+                <div class="signature-area">
+                    <p><b>Tapachula, Chiapas, a</b></p>
+                    <div class="date-input-container">
+                        <input type="text" name="dia" id="dia" placeholder="día" class="small" maxlength="2">
+                        <span>de</span>
+                        <input type="text" name="mes" id="mes" placeholder="mes" class="medium">
+                        <span>de</span>
+                        <input type="text" name="anio" id="anio" placeholder="año" class="large" maxlength="4">
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-footer">
+                <div class="signature-area">
+                    <p><b>Vo.Bo.</b></p>
+                    <div class="signature-input-container">
+                        <input type="text" name="vobo_nombre" placeholder="Nombre" class="signature-name-input">
+                        <input type="file" id="vobo_firma" accept="image/*" class="signature-file-input" style="display: none;" multiple>
+                        <button type="button" class="signature-upload-btn" onclick="document.getElementById('vobo_firma').click()">Agregar Firma</button>
+                    </div>
+                    <div id="vobo_firma_preview" class="signature-preview-container"></div>
+                </div>
+                <div class="signature-area">
+                    <p><b>Fecha de recepción</b></p>
+                    <input type="date" name="fecha_recepcion">
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>

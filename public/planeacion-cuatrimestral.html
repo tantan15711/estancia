@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PLANEACION CUATRIMESTRAL DE ACTIVIDADES - Universidad Politécnica de Tapachula</title>
+    <link rel="stylesheet" href="planeacion-cuatrimestral.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://unpkg.com/docx@7.8.2/build/index.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>PLANEACION CUATRIMESTRAL DE ACTIVIDADES</h1>
+        </header>
+        
+        <!-- Párrafo informativo superior -->
+        <div class="info-paragraph">
+            <p>Este formulario está diseñado para el seguimiento periódico de actividades académicas. Por favor complete todas las secciones correspondientes y adjunte los documentos probatorios cuando sea necesario.</p>
+        </div>
+        
+        <div class="form-group area-periodo">
+            <div class="input-group">
+                <label for="area">Área:</label>
+                <input type="text" id="area" placeholder="Ingrese el área" value="Dirección de Planeación Académica">
+            </div>
+            
+            <div class="input-group">
+                <label for="periodo">Periodo:</label>
+                <select id="periodo" aria-label="Periodo de planeación">
+                    <option value="">-- Selecciona periodo --</option>
+                    <option value="sep-dic">Septiembre - Diciembre</option>
+                    <option value="ene-abr">Enero - Abril</option>
+                    <option value="may-ago">Mayo - Agosto</option>
+                </select>
+            </div>
+        </div>
+        
+        <div class="table-container">
+            <table id="actividades-table">
+                <colgroup>
+                    <col style="width:70px;">
+                    <col style="width:520px;">
+                    <col span="16" style="width:50px;">
+                    <col style="width:150px;">
+                    <col style="width:170px;">
+                    <col style="width:110px;">
+                </colgroup>
+                <thead>
+                <tr>
+                    <th rowspan="2">#</th>
+                    <th rowspan="2">Descripción de Actividad</th>
+                    <th colspan="4" class="mes-header" id="mes1-header">Mes 1</th>
+                    <th colspan="4" class="mes-header" id="mes2-header">Mes 2</th>
+                    <th colspan="4" class="mes-header" id="mes3-header">Mes 3</th>
+                    <th colspan="4" class="mes-header" id="mes4-header">Mes 4</th>
+                    <th rowspan="2">%<br>Cumplimiento</th>
+                    <th rowspan="2">Documento<br>Probatorio</th>
+                    <th rowspan="2">Acciones</th>
+                </tr>
+                <tr>
+                    <th>S1</th><th>S2</th><th>S3</th><th>S4</th>
+                    <th>S1</th><th>S2</th><th>S3</th><th>S4</th>
+                    <th>S1</th><th>S2</th><th>S3</th><th>S4</th>
+                    <th>S1</th><th>S2</th><th>S3</th><th>S4</th>
+                </tr>
+                </thead>
+                <tbody id="table-body">
+                    <!-- Filas generadas dinámicamente -->
+                </tbody>
+            </table>
+        </div>
+        
+        <!-- Tabla para fecha y firmas -->
+        <table class="firma-table">
+            <tr>
+                <td style="width: 25%;">
+                    <label for="fecha">Fecha:</label>
+                    <input type="date" id="fecha" value="">
+                </td>
+                <td style="width: 37.5%;">
+                    <label for="elaboro">Nombre y Puesto Elaboró:</label>
+                    <input type="text" id="elaboro" placeholder="Nombre y puesto" value="">
+                    <div class="firma-upload-container">
+                        <label for="firma-elaboro" class="firma-label">Firma Elaboró:</label>
+                        <input type="file" id="firma-elaboro" class="firma-input" accept="image/*">
+                        <div class="firma-preview" id="preview-firma-elaboro"></div>
+                        <button type="button" class="btn btn-sm btn-danger remove-firma" data-target="firma-elaboro">Eliminar Firma</button>
+                    </div>
+                </td>
+                <td style="width: 37.5%;">
+                    <label for="vo-bo">Nombre y Puesto Vo. Bo.:</label>
+                    <input type="text" id="vo-bo" placeholder="Nombre y puesto" value="">
+                    <div class="firma-upload-container">
+                        <label for="firma-vo-bo" class="firma-label">Firma Vo. Bo.:</label>
+                        <input type="file" id="firma-vo-bo" class="firma-input" accept="image/*">
+                        <div class="firma-preview" id="preview-firma-vo-bo"></div>
+                        <button type="button" class="btn btn-sm btn-danger remove-firma" data-target="firma-vo-bo">Eliminar Firma</button>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Párrafo informativo inferior -->
+        <div class="info-paragraph">
+            <p>Una vez completado el formulario, genere el documento Word para obtener una versión imprimible o guárdelo para continuar más tarde. Todos los campos son obligatorios.</p>
+        </div>
+        
+        <div class="btn-container">
+            <button id="add-row" class="btn btn-primary">
+                <i class="fas fa-plus"></i> Agregar Fila
+            </button>
+            <button id="generate-word" class="btn btn-success">
+                <i class="fas fa-file-word"></i> Generar Word
+            </button>
+            <button id="save-data" class="btn btn-warning">
+                <i class="fas fa-save"></i> Guardar Datos
+            </button>
+            <button id="clear-all" class="btn btn-danger">
+                <i class="fas fa-trash"></i> Limpiar Todo
+            </button>
+        </div>
+
+        <div class="loading" id="loading">
+            <div class="spinner"></div>
+            <p>Generando documento Word...</p>
+        </div>
+        
+        <footer class="footer">
+            <p><strong>Documento controlado por medios electrónicos.</strong></p>
+            <p>Puede ser establecido en Universidad Politécnica de Tapachula</p>
+        </footer>
+    </div>  
+
+    <!-- Modal para confirmaciones -->
+    <div id="confirm-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3 id="modal-title"></h3>
+            <p id="modal-message"></p>
+            <div class="modal-buttons">
+                <button id="modal-confirm" class="btn btn-primary">Confirmar</button>
+                <button id="modal-cancel" class="btn btn-secondary">Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para vista previa de documentos -->
+    <div id="preview-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3>Vista Previa del Documento</h3>
+            <div class="preview-container" id="preview-container"></div>
+        </div>
+    </div>
+
+    <script src="planeacion-cuatrimestral.js"></script>
+</body>
+</html>

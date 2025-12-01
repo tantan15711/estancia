@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programa Anual de Trabajo - Universidad Politécnica de Tapachula</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="programa-anual-de-trabajo.css">
+</head>
+<body>
+    <div class="header no-print">
+        <div>
+            <h1>Universidad Politécnica de Tapachula</h1>
+            <h2>Dirección de Planeación Educativa</h2>
+        </div>
+        <div>
+            <img src="lince.png" alt="Logo UPTap" class="logo-img"/>
+        </div>
+    </div>
+
+    <div class="container no-print">
+        <div class="form-title">Registro</div>
+        <h2>Programa Anual de Trabajo (PAT)</h2>
+
+        <div class="tabs">
+            <div class="tab active" data-tab="tab1">Datos Generales y Acciones</div>
+            <div class="tab" data-tab="tab2">Evaluación del PAT</div>
+        </div>
+
+        <!-- Pestaña 1: Datos Generales y Acciones -->
+        <div id="tab1" class="tab-content active">
+            <div class="form-section">
+                <h3>Datos Generales</h3>
+                <table class="general-data-table">
+                    <tr>
+                        <td><strong>Responsable:</strong></td>
+                        <td><input type="text" id="responsable" class="form-input" required></td>
+                        <td><strong>Área/Departamento:</strong></td>
+                        <td>
+                            <select id="departamento" class="form-input" required>
+                                <option value="">Seleccione una opción</option>
+                                <option value="Secretaría Académica">Secretaría Académica</option>
+                                <option value="Secretaría Administrativa">Secretaría Administrativa</option>
+                            </select>
+                            <input type="text" id="departamento-otro" class="form-input" placeholder="O especifique otro" style="margin-top: 5px; display: none;">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Área de adscripción:</strong></td>
+                        <td><input type="text" id="adscripcion" class="form-input" required></td>
+                        <td><strong>Programa de Trabajo:</strong></td>
+                        <td>
+                            <select id="programa" class="form-input" required>
+                                <option value="2025">2025</option>
+                                <option value="2026">2026</option>
+                                <option value="2027">2027</option>
+                                <option value="2028">2028</option>
+                                <option value="2029">2029</option>
+                                <option value="2030">2030</option>
+                            </select>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="form-section">
+                <div class="section-header">
+                    <h3 class="section-title">Acciones del PAT</h3>
+                    <div class="top-actions">
+                        <button id="add-action-btn" class="btn btn-add">
+                            <i class="fas fa-plus"></i> Agregar Acción
+                        </button>
+                        <button id="clear-actions-btn" class="btn btn-remove">
+                            <i class="fas fa-trash"></i> Limpiar Todo
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="table-responsive">
+                    <table id="acciones-table">
+                        <thead>
+                            <tr>
+                                <th rowspan="2">EJE / ESTRATEGIA PIDE</th>
+                                <th rowspan="2">CAT / IND DE CAT CACEI</th>
+                                <th rowspan="2">ÁMBITO / INDICADOR / CRITERIO SEAES</th>
+                                <th rowspan="2">ACCIONES</th>
+                                <th colspan="12">CALENDARIO / MESES</th>
+                                <th rowspan="2">META</th>
+                                <th rowspan="2">UNIDAD DE MEDIDA</th>
+                                <th colspan="2">AVANCE</th>
+                                <th rowspan="2" class="no-print">Acciones</th>
+                            </tr>
+                            <tr>
+                                <th>Ene</th>
+                                <th>Feb</th>
+                                <th>Mar</th>
+                                <th>Abr</th>
+                                <th>May</th>
+                                <th>Jun</th>
+                                <th>Jul</th>
+                                <th>Ago</th>
+                                <th>Sep</th>
+                                <th>Oct</th>
+                                <th>Nov</th>
+                                <th>Dic</th>
+                                <th>Programado/ Realizado</th>
+                                <th>% Cumplimiento</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Filas dinámicas -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="signature-section no-print">
+                <div class="signature-box">
+                    <input type="text" id="responsable-name" class="form-input" placeholder="Nombre completo" required>
+                    <p>Responsable (Elabora PAT)</p>
+                </div>
+                <div class="signature-box">
+                    <input type="text" id="jefe-name" class="form-input" placeholder="Nombre completo" required>
+                    <p>Vo.Bo. Jefe Inmediato</p>
+                </div>
+                <div class="signature-box">
+                    <input type="text" id="titular-name" class="form-input" placeholder="Nombre completo" required>
+                    <p>Titular de Planeación</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pestaña 2: Evaluación del PAT -->
+        <div id="tab2" class="tab-content">
+            <div class="form-section">
+                <h3>Evaluación del PAT</h3>
+                
+                <div class="fixed-text">
+                    <strong>LOGROS DEL PAT:</strong> El texto deberá hacer referencia a los logros o resultados alcanzados durante 2025. Se pueden incluir el número de logros que se consideren relevantes, pero cada logro o resultado debe integrarse en párrafos de máximo 100 palabras. Cuando se estime necesario, podrán incorporarse las tablas, gráficas, notas a pie de página, anexos y demás elementos que proporcione mayor claridad a la interpretación del texto. El texto de las figuras y anexos no se contabilizará para el límite de extensión de las secciones.
+                </div>
+                
+                <div style="margin-bottom: 10px;">
+                    <label><strong>LOGROS DEL PAT:</strong></label>
+                    <textarea id="logros" class="form-input" rows="5" placeholder="Describa los logros alcanzados"></textarea>
+                </div>
+                
+                <div style="margin-bottom: 10px;">
+                    <label><strong>EVALUACIÓN DE LAS CAUSAS EN CASO DE NO HABER LOGRADO LAS METAS:</strong></label>
+                    <textarea id="causas" class="form-input" rows="5" placeholder="Describa las causas"></textarea>
+                </div>
+                
+                <div>
+                    <label><strong>DECISIONES O ACCIONES A CONSIDERAR PARA EL PAT DEL SIGUIENTE AÑO:</strong></label>
+                    <textarea id="decisiones" class="form-input" rows="5" placeholder="Describa las acciones"></textarea>
+                </div>
+            </div>
+
+            <div class="signature-section no-print">
+                <div class="signature-box">
+                    <input type="text" id="evaluacion-responsable" class="form-input" placeholder="Nombre completo" required>
+                    <p>Responsable (Elabora PAT)</p>
+                </div>
+                <div class="signature-box">
+                    <input type="text" id="evaluacion-jefe" class="form-input" placeholder="Nombre completo" required>
+                    <p>Vo.Bo. Jefe Inmediato</p>
+                </div>
+                <div class="signature-box">
+                    <input type="text" id="evaluacion-titular" class="form-input" placeholder="Nombre completo" required>
+                    <p>Titular de Planeación</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="btn-container">
+            <button id="save-draft-btn" class="btn btn-secondary">
+                <i class="fas fa-save"></i> Guardar Borrador
+            </button>
+            <button id="generate-pdf-btn" class="btn btn-primary">
+                <i class="fas fa-file-pdf"></i> Generar PDF
+            </button>
+        </div>
+    </div>
+
+    <script src="programa-anual-de-trabajo.js"></script>
+</body>
+</html>

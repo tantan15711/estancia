@@ -1,0 +1,372 @@
+:root {
+  --primary-color: #005a8c;
+  --secondary-color: #f8b334;
+  --accent-color: #e74c3c;
+  --light-color: #ecf0f1;
+  --dark-color: #2c3e50;
+  --success-color: #27ae60;
+  --warning-color: #f39c12;
+  --border-radius: 4px;
+  --box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  --transition: all 0.2s ease;
+  --container-padding: 15px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  line-height: 1.5;
+  color: #333;
+  background-color: #f5f5f5;
+  padding: 0;
+  margin: 0;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--primary-color);
+  color: white;
+  padding: 12px var(--container-padding);
+  border-bottom: 5px solid var(--secondary-color);
+  width: 100%;
+}
+
+.header h1 {
+  font-size: 1.4rem;
+  margin-bottom: 5px;
+}
+
+.header h2 {
+  font-size: 1rem;
+  font-weight: normal;
+}
+
+.logo-img {
+  height: 80px;
+  width: auto;
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  background: white;
+  padding: var(--container-padding);
+  box-sizing: border-box;
+}
+
+.form-section {
+  margin-bottom: 15px;
+  padding: 10px;
+  background: #f8f8f8;
+  border: 1px solid #e0e0e0;
+  border-radius: var(--border-radius);
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.section-title {
+  margin: 0;
+}
+
+.general-data-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 10px;
+}
+
+.general-data-table td {
+  padding: 8px;
+  vertical-align: middle;
+}
+
+.general-data-table td:nth-child(2n+1) {
+  white-space: nowrap;
+  padding-right: 8px;
+}
+
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  margin: 15px 0;
+  border: 1px solid #ddd;
+  border-radius: var(--border-radius);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.8rem;
+}
+
+th, td {
+  padding: 8px;
+  border: 1px solid #ddd;
+  text-align: center;
+  vertical-align: middle;
+  min-width: 40px;
+}
+
+th {
+  background-color: var(--primary-color);
+  color: white;
+  font-weight: 500;
+  position: sticky;
+  top: 0;
+}
+
+.form-input, .table-input {
+  width: 100%;
+  padding: 6px;
+  border: 1px solid #ccc;
+  border-radius: var(--border-radius);
+  font-size: 0.8rem;
+  transition: var(--transition);
+  box-sizing: border-box;
+  min-width: 50px;
+}
+
+.form-input:focus, .table-input:focus {
+  border-color: var(--secondary-color);
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(248, 179, 52, 0.2);
+}
+
+.month-checkbox {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+.signature-section {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.signature-box {
+  width: 30%;
+  text-align: center;
+}
+
+.signature-box input {
+  width: 100%;
+  text-align: center;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  border-radius: 0;
+  padding: 4px 0;
+  margin-bottom: 4px;
+}
+
+.signature-box p {
+  margin-top: 4px;
+  border-top: 1px solid #333;
+  padding-top: 4px;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 15px;
+}
+
+.top-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 8px 12px;
+  border: none;
+  border-radius: var(--border-radius);
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.btn i {
+  font-size: 0.8em;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.btn-secondary {
+  background-color: var(--secondary-color);
+  color: #333;
+}
+
+.btn-add {
+  background-color: var(--success-color);
+  color: white;
+}
+
+.btn-remove {
+  background-color: var(--accent-color);
+  color: white;
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.alert {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  padding: 10px 15px;
+  border-radius: var(--border-radius);
+  color: white;
+  z-index: 1000;
+  box-shadow: var(--box-shadow);
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  
+  body {
+    font-size: 9pt;
+  }
+  
+  table {
+    font-size: 7pt;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .signature-section {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .signature-box {
+    width: 100%;
+  }
+  
+  .btn-container, .top-actions {
+    flex-direction: column;
+  }
+  
+  .btn {
+    width: 100%;
+  }
+}
+/* NUEVAS REGLAS CSS PARA LAS MEJORAS */
+
+.tabs {
+    display: flex;
+    margin-bottom: 15px;
+    border-bottom: 2px solid var(--primary-color);
+}
+
+.tab {
+    padding: 10px 20px;
+    cursor: pointer;
+    background: #f0f0f0;
+    border: 1px solid #ddd;
+    border-bottom: none;
+    border-radius: var(--border-radius) var(--border-radius) 0 0;
+    margin-right: 5px;
+    transition: var(--transition);
+}
+
+.tab.active {
+    background: var(--primary-color);
+    color: white;
+    font-weight: bold;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.table-textarea {
+    resize: vertical;
+    min-height: 40px;
+    font-family: inherit;
+}
+
+.table-select {
+    font-family: inherit;
+}
+
+.file-upload {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 5px;
+}
+
+.file-name {
+    font-size: 0.7rem;
+    color: #666;
+    max-width: 80px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.file-input {
+    display: none;
+}
+
+.fixed-text {
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-left: 4px solid var(--primary-color);
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+/* Responsive para tabs en móviles */
+@media (max-width: 768px) {
+    .tabs {
+        flex-direction: column;
+    }
+    
+    .tab {
+        margin-right: 0;
+        margin-bottom: 5px;
+        border-radius: var(--border-radius);
+        border: 1px solid #ddd;
+    }
+    
+    .tab.active {
+        border-radius: var(--border-radius);
+    }
+}

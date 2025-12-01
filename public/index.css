@@ -1,0 +1,403 @@
+/* Font Definitions */
+@font-face {
+    font-family: Wingdings;
+    panose-1: 5 0 0 0 0 0 0 0 0 0;
+}
+@font-face {
+    font-family: "Cambria Math";
+    panose-1: 2 4 5 3 5 4 6 3 2 4;
+}
+@font-face {
+    font-family: "Futura Bk";
+    panose-1: 0 0 0 0 0 0 0 0 0 0;
+}
+@font-face {
+    font-family: "Century Gothic";
+    panose-1: 2 11 5 2 2 2 2 2 2 4;
+}
+
+/* Style Definitions */
+body {
+    font-family: "Times New Roman", serif;
+    font-size: 12pt;
+    margin: 0;
+    padding: 20px;
+    word-wrap: break-word;
+    background-color: #f5f5f5;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #003366;
+}
+
+.logo-container {
+    flex: 1;
+}
+
+.logo {
+    max-width: 150px;
+    height: auto;
+}
+
+.title-container {
+    flex: 2;
+    text-align: center;
+}
+
+.university-title {
+    font-size: 16pt;
+    font-weight: bold;
+    color: #003366;
+    margin: 0;
+}
+
+.document-title {
+    font-size: 14pt;
+    font-weight: bold;
+    color: #003366;
+    margin: 5px 0 0 0;
+}
+
+.department-info {
+    flex: 1;
+    text-align: right;
+    font-size: 9pt;
+    color: #666;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 15px;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+th, td {
+    padding: 8px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.bg-gray {
+    background-color: #D9D9D9;
+}
+
+.bg-light-gray {
+    background-color: #CCCCCC;
+}
+
+.bg-medium-gray {
+    background-color: #BFBFBF;
+}
+
+input[type="text"], textarea {
+    width: 100%;
+    padding: 5px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    font-family: "Arial", sans-serif;
+    font-size: 10pt;
+}
+
+input[type="checkbox"] {
+    transform: scale(1.2);
+}
+
+select {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    font-family: "Arial", sans-serif;
+    font-size: 10pt;
+    background-color: white;
+}
+
+.section-title {
+    font-weight: bold;
+    text-align: center;
+    margin: 15px 0;
+}
+
+.form-footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.signature-area {
+    width: 45%;
+    text-align: center;
+    padding: 10px;
+}
+
+.note {
+    font-style: italic;
+    font-size: 9pt;
+    margin: 5px 0;
+}
+
+.action-buttons {
+    text-align: center;
+    margin: 20px 0;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12pt;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.photo-evidence {
+    margin: 15px 0;
+    padding: 10px;
+    border: 1px dashed #ccc;
+}
+
+.photo-preview {
+    max-width: 200px;
+    max-height: 150px;
+    margin: 5px;
+    border: 1px solid #ddd;
+}
+
+.signature-section {
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.signature-preview-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.signature-preview {
+    max-width: 150px;
+    max-height: 100px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.remove-signature {
+    background: #ff4444;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    font-size: 12px;
+    margin-left: -12px;
+    margin-top: -12px;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+
+.remove-signature:hover {
+    background: #cc0000;
+    transform: scale(1.1);
+}
+
+.signature-item {
+    position: relative;
+    display: inline-block;
+    margin: 5px;
+}
+
+.signature-upload-btn {
+    background: #2196F3;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 5px;
+    font-size: 10pt;
+}
+
+.signature-upload-btn:hover {
+    background: #0b7dda;
+}
+
+.signature-input-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 5px 0;
+}
+
+.signature-name-input {
+    flex: 1;
+}
+
+.loading {
+    display: none;
+    text-align: center;
+    padding: 20px;
+}
+
+.spinner {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #3498db;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 2s linear infinite;
+    margin: 0 auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.drive-link {
+    color: #1a73e8;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.drive-link:hover {
+    color: #0d47a1;
+}
+
+.date-input-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    margin-top: 10px;
+}
+
+.date-input-container input {
+    text-align: center;
+    border: none;
+    border-bottom: 1px solid #000;
+    background: transparent;
+    font-family: "Times New Roman", serif;
+    font-size: 12pt;
+    width: auto;
+    padding: 0 5px;
+}
+
+.date-input-container .small {
+    width: 60px;
+}
+
+.date-input-container .medium {
+    width: 100px;
+}
+
+.date-input-container .large {
+    width: 80px;
+}
+
+/* Estilos para múltiples acciones */
+.accion {
+    margin-bottom: 30px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.accion-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #003366;
+}
+
+.accion-header h3 {
+    margin: 0;
+    color: #003366;
+}
+
+.eliminar-accion {
+    background-color: #f44336;
+    padding: 5px 10px;
+    font-size: 10pt;
+}
+
+.eliminar-accion:hover {
+    background-color: #d32f2f;
+}
+
+.separador-accion {
+    margin: 30px 0;
+    border: 0;
+    border-top: 2px dashed #ccc;
+}
+
+/* Estilos para botones de acción mejorados */
+.action-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 30px 0;
+}
+
+.action-buttons button {
+    padding: 12px 25px;
+    font-size: 14px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+#agregarAccion {
+    background-color: #2196F3;
+}
+
+#agregarAccion:hover {
+    background-color: #0b7dda;
+}
+
+#guardarBorrador {
+    background-color: #FF9800;
+}
+
+#guardarBorrador:hover {
+    background-color: #e68900;
+}
+
+#generarWord {
+    background-color: #4CAF50;
+}
+
+#generarWord:hover {
+    background-color: #45a049;
+}

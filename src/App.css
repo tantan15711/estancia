@@ -1,0 +1,132 @@
+html, body, #root {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  border: none !important;
+  outline: none !important;
+  background: linear-gradient(135deg, #ffffff 0%, #e6f7ff 50%, #0077b6 100%);
+}
+
+/* Estilos generales de la aplicación SIN BORDES */
+.App {
+  text-align: center;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(135deg, #ffffff 0%, #e6f7ff 50%, #0077b6 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  border: none;
+}
+
+/* Estilos para el estado de carga SIN BORDES */
+.loading-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #ffffff 0%, #e6f7ff 50%, #0077b6 100%);
+  margin: 0;
+  padding: 0;
+  color: #0077b6;
+  border: none;
+}
+
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid rgba(0, 119, 182, 0.3);
+  border-radius: 50%;
+  border-top-color: #0077b6;
+  animation: spin 1s ease-in-out infinite;
+  margin-bottom: 20px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Eliminar cualquier borde residual de componentes antiguos */
+.university-layout,
+.university-header,
+.university-nav,
+.university-main,
+.dashboard-content,
+.dashboard-card,
+.welcome-message {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Estilos específicos para eliminar líneas en el login */
+.login-container {
+  border: none !important;
+  outline: none !important;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3) !important;
+}
+
+.login-left-panel,
+.login-right-panel {
+  border: none !important;
+  outline: none !important;
+}
+
+/* Asegurar que no haya bordes en los inputs */
+.login-input-group input,
+.login-captcha-container,
+.login-captcha-code {
+  border: 1px solid #ddd !important;
+  outline: none !important;
+}
+
+.login-input-group input:focus {
+  border-color: #1a4c8c !important;
+  outline: none !important;
+}
+
+/* Eliminar líneas de los botones */
+.cta,
+.documents-button-fullscreen,
+.nav-link-fullscreen {
+  border: none !important;
+  outline: none !important;
+}
+
+/* Eliminar línea del footer */
+.footer {
+  border-top: none !important;
+}
+
+/* Eliminar bordes específicos del Login */
+.login-container,
+.login-left-panel,
+.login-right-panel,
+.login-captcha-container,
+.login-success-message {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Mantener solo bordes esenciales de inputs */
+.login-input-group input,
+.login-captcha-code {
+  border: 1px solid #ddd !important;
+}
+
+.login-input-group input:focus {
+  border: 1px solid #8e44ad !important;
+}
+
+/* Fondo consistente para toda la aplicación */
+body {
+  background: linear-gradient(135deg, #ffffff 0%, #e6f7ff 50%, #0077b6 100%) !important;
+}
