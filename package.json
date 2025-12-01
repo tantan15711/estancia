@@ -8,10 +8,7 @@
     "@testing-library/jest-dom": "^6.6.4",
     "@testing-library/react": "^16.3.0",
     "@testing-library/user-event": "^13.5.0",
-<<<<<<< HEAD
     "file-saver": "^2.0.5",
-=======
->>>>>>> fd05dfcffb682b127e57bf03123a5abd8d5b1f0f
     "react": "^19.1.1",
     "react-devtools": "^6.1.5",
     "react-dom": "^19.1.1",
