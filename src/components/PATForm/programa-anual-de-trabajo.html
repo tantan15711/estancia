@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programa Anual de Trabajo - Universidad Politécnica de Tapachula</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="header no-print">
+        <div>
+            <h1>Universidad Politécnica de Tapachula</h1>
+            <h2>Dirección de Planeación Educativa</h2>
+        </div>
+        <div>
+            <img src="lince.png" alt="Logo UPTap" class="logo-img"/>
+        </div>
+    </div>
+
+    <div class="container no-print">
+        <div class="form-title">Registro</div>
+        <h2>Programa Anual de Trabajo (PAT)</h2>
+
+        <div class="form-section">
+            <h3>Datos Generales</h3>
+            <table class="general-data-table">
+                <tr>
+                    <td><strong>Responsable:</strong></td>
+                    <td><input type="text" id="responsable" class="form-input" required></td>
+                    <td><strong>Área/Departamento:</strong></td>
+                    <td><input type="text" id="departamento" class="form-input" required></td>
+                </tr>
+                <tr>
+                    <td><strong>Área de adscripción:</strong></td>
+                    <td><input type="text" id="adscripcion" class="form-input" required></td>
+                    <td><strong>Programa de Trabajo:</strong></td>
+                    <td><input type="text" id="programa" class="form-input" value="2025" required></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="form-section">
+            <div class="section-header">
+                <h3 class="section-title">Acciones del PAT</h3>
+                <div class="top-actions">
+                    <button id="add-action-btn" class="btn btn-add">
+                        <i class="fas fa-plus"></i> Agregar Acción
+                    </button>
+                    <button id="clear-actions-btn" class="btn btn-remove">
+                        <i class="fas fa-trash"></i> Limpiar Todo
+                    </button>
+                </div>
+            </div>
+            
+            <div class="table-responsive">
+                <table id="acciones-table">
+                    <thead>
+                        <tr>
+                            <th rowspan="2">EJE / ESTRATEGIA PIDE</th>
+                            <th rowspan="2">CAT / IND DE CAT CACEI</th>
+                            <th rowspan="2">ÁMBITO / INDICADOR / CRITERIO SEAES</th>
+                            <th rowspan="2">ACCIONES</th>
+                            <th colspan="12">CALENDARIO / MESES</th>
+                            <th rowspan="2">META</th>
+                            <th colspan="2">AVANCE</th>
+                            <th rowspan="2" class="no-print">Acciones</th>
+                        </tr>
+                        <tr>
+                            <th>Ene</th>
+                            <th>Feb</th>
+                            <th>Mar</th>
+                            <th>Abr</th>
+                            <th>May</th>
+                            <th>Jun</th>
+                            <th>Jul</th>
+                            <th>Ago</th>
+                            <th>Sep</th>
+                            <th>Oct</th>
+                            <th>Nov</th>
+                            <th>Dic</th>
+                            <th>Programado/ Realizado</th>
+                            <th>% Cumplimiento</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Filas dinámicas -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="form-section">
+            <h3>Evaluación del PAT</h3>
+            <div style="margin-bottom: 10px;">
+                <label><strong>LOGROS DEL PAT:</strong></label>
+                <textarea id="logros" class="form-input" rows="3" placeholder="Describa los logros"></textarea>
+            </div>
+            
+            <div style="margin-bottom: 10px;">
+                <label><strong>EVALUACIÓN DE LAS CAUSAS:</strong></label>
+                <textarea id="causas" class="form-input" rows="3" placeholder="Describa las causas"></textarea>
+            </div>
+            
+            <div>
+                <label><strong>DECISIONES PARA EL PRÓXIMO AÑO:</strong></label>
+                <textarea id="decisiones" class="form-input" rows="3" placeholder="Describa las acciones"></textarea>
+            </div>
+        </div>
+
+        <div class="signature-section no-print">
+            <div class="signature-box">
+                <input type="text" id="responsable-name" class="form-input" placeholder="Nombre completo" required>
+                <p>Responsable</p>
+            </div>
+            <div class="signature-box">
+                <input type="text" id="jefe-name" class="form-input" placeholder="Nombre completo" required>
+                <p>Vo.Bo. Jefe Inmediato</p>
+            </div>
+            <div class="signature-box">
+                <input type="text" id="titular-name" class="form-input" placeholder="Nombre completo" required>
+                <p>Titular de Planeación</p>
+            </div>
+        </div>
+
+        <div class="btn-container">
+            <button id="save-draft-btn" class="btn btn-secondary">
+                <i class="fas fa-save"></i> Guardar Borrador
+            </button>
+            <button id="generate-pdf-btn" class="btn btn-primary">
+                <i class="fas fa-file-pdf"></i> Generar PDF
+            </button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

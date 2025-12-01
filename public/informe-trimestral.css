@@ -1,0 +1,649 @@
+:root {
+  --primary-color: #2c3e50;
+  --secondary-color: #3498db;
+  --accent-color: #e74c3c;
+  --light-color: #ecf0f1;
+  --dark-color: #2c3e50;
+  --gray-color: #95a5a6;
+  --success-color: #27ae60;
+  --warning-color: #f39c12;
+  --border-radius: 8px;
+  --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', 'Roboto', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f5f7fa;
+  padding: 20px;
+}
+
+/* Header Styles */
+.modern-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  padding: 15px 20px;
+  background-color: white;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo-img {
+  height: 70px;
+  width: auto;
+}
+
+.title-container h1 {
+  font-size: 1.3rem;
+  color: var(--primary-color);
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.title-container h2 {
+  font-size: 1rem;
+  color: var(--gray-color);
+  font-weight: 500;
+}
+
+.form-title h1 {
+  font-size: 1.2rem;
+  color: var(--primary-color);
+  text-align: right;
+  margin-bottom: 5px;
+}
+
+.form-title h2 {
+  font-size: 1.5rem;
+  color: var(--secondary-color);
+  text-align: right;
+  font-weight: 600;
+}
+
+/* Form Container */
+.form-container {
+  background: white;
+  padding: 30px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  margin-bottom: 30px;
+}
+
+/* Sections */
+.quarter-section, .action-section, .signatures-section {
+  margin-bottom: 25px;
+  padding: 20px;
+  border-radius: var(--border-radius);
+  background: #f8f9fa;
+  border: 1px solid #e9ecef;
+}
+
+.quarter-section legend {
+  font-weight: 600;
+  color: var(--primary-color);
+  padding: 0 10px;
+  font-size: 1.1rem;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.section-header h3 {
+  color: var(--primary-color);
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.remove-action-btn {
+  background: var(--accent-color);
+  color: white;
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.remove-action-btn:hover {
+  background: #c0392b;
+  transform: scale(1.05);
+}
+
+/* Grid Layout */
+.grid-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+/* Input Groups */
+.input-group {
+  margin-bottom: 15px;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: var(--primary-color);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.input-group input[type="text"],
+.input-group input[type="number"],
+.input-group input[type="date"],
+.input-group input[type="month"],
+.input-group input[type="url"],
+.input-group textarea,
+.input-group select {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  transition: var(--transition);
+  background-color: #fff;
+}
+
+.input-group input[type="text"]:focus,
+.input-group input[type="number"]:focus,
+.input-group input[type="date"]:focus,
+.input-group input[type="month"]:focus,
+.input-group input[type="url"]:focus,
+.input-group textarea:focus {
+  border-color: var(--secondary-color);
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+  outline: none;
+}
+
+.input-with-icon {
+  position: relative;
+}
+
+.input-with-icon i {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--gray-color);
+}
+
+.input-with-icon input {
+  padding-left: 35px !important;
+}
+
+textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.result-input {
+  background-color: #f8f9fa !important;
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+/* Radio Buttons */
+.radio-group {
+  display: flex;
+  gap: 15px;
+  margin-top: 8px;
+}
+
+.radio-group.horizontal {
+  flex-direction: row;
+}
+
+.radio-option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.radio-custom {
+  width: 18px;
+  height: 18px;
+  border: 2px solid var(--gray-color);
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  transition: var(--transition);
+}
+
+.radio-option input[type="radio"] {
+  display: none;
+}
+
+.radio-option input[type="radio"]:checked + .radio-custom {
+  border-color: var(--secondary-color);
+  background-color: var(--secondary-color);
+}
+
+.radio-option input[type="radio"]:checked + .radio-custom::after {
+  content: '';
+  width: 8px;
+  height: 8px;
+  background: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Tables */
+.table-responsive {
+  overflow-x: auto;
+  margin: 20px 0;
+}
+
+.goals-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 15px 0;
+  font-size: 0.95rem;
+}
+
+.goals-table th {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 12px;
+  text-align: center;
+  font-weight: 500;
+}
+
+.goals-table td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+.goals-table input,
+.goals-table textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.goals-table textarea {
+  min-height: 60px;
+}
+
+/* Buttons */
+.action-buttons {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+button {
+  padding: 12px 20px;
+  border: none;
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.btn-add {
+  background-color: var(--success-color);
+  color: white;
+}
+
+.btn-add:hover {
+  background-color: #219653;
+  transform: translateY(-2px);
+}
+
+.btn-remove {
+  background-color: var(--accent-color);
+  color: white;
+}
+
+.btn-remove:hover {
+  background-color: #c0392b;
+  transform: translateY(-2px);
+}
+
+.btn-pdf {
+  background-color: var(--warning-color);
+  color: white;
+}
+
+.btn-pdf:hover {
+  background-color: #e67e22;
+  transform: translateY(-2px);
+}
+
+.btn-submit {
+  background-color: var(--secondary-color);
+  color: white;
+}
+
+.btn-submit:hover {
+  background-color: #2980b9;
+  transform: translateY(-2px);
+}
+
+button:disabled {
+  background-color: #bdc3c7 !important;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+/* Spinner animation */
+.fa-spinner {
+  margin-right: 8px;
+  animation: fa-spin 1s infinite linear;
+}
+
+@keyframes fa-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(359deg); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .modern-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+  
+  .form-title h1,
+  .form-title h2 {
+    text-align: left;
+  }
+  
+  .form-actions {
+    flex-direction: column;
+  }
+  
+  button {
+    width: 100%;
+  }
+}/* styles.css - Moderno, profesional + FIX para evitar recortes en la "tabla" */
+
+/* -------------------- VARIABLES -------------------- */
+:root{
+  /* Paleta profesional (azul/teal institucional) */
+  --bg:#f3f6f9;
+  --sheet-bg: #ffffff;
+  --primary: #0f6f8f;       /* azul/teal principal */
+  --primary-2: #1f77b4;     /* azul secundario */
+  --accent: #0b4d61;        /* texto títulos */
+  --muted: #667085;         /* textos secundarios */
+  --danger: #e04545;
+  --success: #27ae60;
+  --surface-1: #fbfdff;     /* ligero contraste para secciones */
+  --surface-2: #f7fafc;
+  --border: rgba(15,15,15,0.06);
+  --glass: rgba(255,255,255,0.65);
+  --gap: 12px;
+  --sheet-w:1100px;
+  --radius: 10px;
+  --shadow-1: 0 6px 20px rgba(15,23,42,0.08);
+  --shadow-2: 0 10px 30px rgba(11,51,70,0.06);
+  --transition: 180ms cubic-bezier(.2,.9,.3,1);
+}
+
+/* -------------------- RESET -------------------- */
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{
+  font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+  background: linear-gradient(180deg, #f6f8fb 0%, var(--bg) 100%);
+  display:flex;
+  justify-content:center;
+  padding:28px;
+  color:#0b1220;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.45;
+  overflow-y:auto;
+}
+
+/* -------------------- SHEET PRINCIPAL -------------------- */
+.sheet{
+  width:var(--sheet-w);
+  max-width:calc(100% - 56px);
+  background: linear-gradient(180deg, var(--sheet-bg), var(--surface-2));
+  border-radius:14px;
+  border:1px solid var(--border);
+  padding:22px;
+  box-shadow:var(--shadow-1);
+  overflow-x:auto; /* permite scroll horizontal si hace falta */
+  -webkit-overflow-scrolling: touch;
+  transition:box-shadow var(--transition);
+  word-break:break-word;
+}
+.sheet:focus-within{ box-shadow: var(--shadow-2); }
+
+/* -------------------- HEADER -------------------- */
+.doc-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:14px;
+  margin-bottom:18px;
+  padding:12px;
+  border-radius:10px;
+  background: linear-gradient(90deg, rgba(31,119,180,0.06), rgba(15,111,143,0.03));
+  border:1px solid rgba(15,23,42,0.03);
+}
+.doc-header .left{display:flex;gap:12px;align-items:center}
+.logo{height:56px;width:auto;border-radius:8px;box-shadow:0 6px 18px rgba(11,51,70,0.06)}
+.org-title{font-weight:800;color:var(--accent);font-size:16px;letter-spacing:0.2px}
+.org-sub{font-size:12px;color:var(--muted);margin-top:2px}
+.doc-name{font-weight:800;font-size:18px;color:var(--primary);text-align:right}
+.doc-web{font-size:12px;color:var(--muted);text-align:right;margin-top:6px}
+
+/* -------------------- FORM Y CAJAS (cards) -------------------- */
+.form{display:block}
+.box{
+  border-radius:10px;
+  border:1px solid rgba(11,51,70,0.04);
+  padding:14px;
+  margin-bottom:14px;
+  background: linear-gradient(180deg, var(--surface-1), rgba(255,255,255,0.6));
+  box-shadow: 0 4px 16px rgba(8,20,30,0.02);
+}
+
+/* -------------------- TEXTOS Y ETIQUETAS -------------------- */
+.label{font-size:13px;font-weight:700;margin-bottom:8px;display:block;color:#0b1220}
+.strong{font-size:14px}
+.note{font-size:12px;color:var(--muted);margin-top:6px}
+.instruction{font-size:13px;color:var(--muted);margin-top:8px;line-height:1.4}
+
+/* -------------------- FILAS Y CAMPOS -------------------- */
+.row{display:flex;gap:var(--gap);align-items:flex-start;margin-bottom:12px}
+.inputs-2 .field{flex:1}
+.inputs-3 .field{flex:1}
+.field{display:flex;flex-direction:column;gap:8px}
+.field.short{max-width:220px}
+
+/* Inputs modernos */
+input[type="text"], input[type="number"], input[type="month"], input[type="date"], select, textarea{
+  border:1px solid rgba(11,51,70,0.08);
+  padding:10px 12px;
+  border-radius:8px;
+  font-size:14px;
+  background:linear-gradient(180deg,#ffffff,#fbfdff);
+  transition: border-color var(--transition), box-shadow var(--transition), transform var(--transition);
+  outline: none;
+  color:#0b1220;
+  min-height:40px;
+  box-shadow: 0 1px 0 rgba(11,51,70,0.02) inset;
+}
+input::placeholder, textarea::placeholder { color: #97a0ad; font-weight:500; }
+textarea{min-height:80px;resize:vertical}
+input[type="text"]:focus, input[type="number"]:focus, select:focus, textarea:focus{
+  border-color: rgba(31,119,180,0.95);
+  box-shadow: 0 6px 20px rgba(31,119,180,0.06);
+  transform: translateY(-1px);
+}
+
+/* Radios y check look */
+.radios{display:flex;gap:12px;flex-wrap:wrap}
+.radio{display:flex;align-items:center;gap:8px;font-weight:600;color:#0b1220}
+.radio input{width:16px;height:16px;accent-color:var(--primary)}
+.inline{display:inline-flex;align-items:center}
+
+/* -------------------- ACCIONES Y SECCIONES -------------------- */
+.action-section{
+  border-radius:10px;
+  border:1px solid rgba(11,51,70,0.06);
+  padding:12px;
+  margin-bottom:10px;
+  background: linear-gradient(180deg,#ffffff,#fbfdff);
+  box-shadow: 0 8px 18px rgba(11,51,70,0.03);
+}
+.action-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+.action-title{font-weight:800;color:var(--primary)}
+.action-controls .btn-remove-action{
+  background:transparent;color:var(--danger);border:1px solid rgba(224,69,69,0.12);
+  padding:6px 10px;border-radius:8px;cursor:pointer;font-weight:700;
+  transition:all var(--transition);
+}
+.action-controls .btn-remove-action:hover{ background:var(--danger); color:#fff; transform:translateY(-2px) }
+
+/* -------------------- "TABLA" (P / R / Cumplimiento / Justificación) -------------------- */
+/* FIX incluido: permitir apilamiento en pantallas pequeñas para evitar recortes */
+.table-like{
+  border-top:1px solid rgba(11,51,70,0.04);
+  margin-top:10px;
+  overflow:visible; /* NO ocultar nada */
+}
+
+/* Antes: flex-wrap:nowrap;  -> Ahora: wrap para que las "columnas" se apilen si falta ancho */
+.table-head{
+  display:flex;
+  background:linear-gradient(90deg, rgba(31,119,180,0.06), rgba(15,111,143,0.02));
+  padding:10px 8px;border-radius:8px;
+  border-bottom:1px solid rgba(11,51,70,0.03);
+  font-weight:700;font-size:13px;align-items:flex-start;
+}
+.table-row{
+  display:flex;
+  padding:12px 0;
+  align-items:flex-start;
+  gap:12px;
+  white-space:normal;
+  flex-wrap:wrap; /* <- FIX: permite apilar para que no corte */
+  border-bottom:1px dashed rgba(11,51,70,0.03);
+}
+.cell{padding:0 8px;display:flex;flex-direction:column;gap:8px;align-items:stretch}
+.cell.small{width:140px;flex:0 0 140px;min-width:120px}
+.cell.large{flex:1;min-width:260px}
+.cell input, .cell textarea{width:100%}
+/* Textareas dentro de celda: no se recorten, pueden crecer */
+.cell.large textarea{min-height:120px; max-height:none; resize:vertical; padding:10px; border-radius:8px;}
+
+/* -------------------- PREVIEWS Y FIRMA -------------------- */
+.photo-previews{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px}
+.photo-previews img{width:110px;height:70px;object-fit:cover;border-radius:6px;border:1px solid rgba(11,51,70,0.06);background:#fff;box-shadow:0 6px 12px rgba(11,51,70,0.04)}
+.firma-preview{margin-top:8px}
+.firma-preview img{max-height:84px;border-radius:6px;border:1px solid rgba(11,51,70,0.06);padding:6px;background:#fff}
+.firma-preview .file-name{font-size:13px;color:var(--muted)}
+
+/* -------------------- BOTONES Y CONTROLES -------------------- */
+.controls{display:flex;gap:10px;margin-bottom:14px;flex-wrap:wrap}
+.controls button{
+  padding:10px 14px;
+  background:linear-gradient(180deg,var(--primary), var(--primary-2));
+  color:#fff;border:none;border-radius:10px;cursor:pointer;font-weight:700;
+  box-shadow:0 8px 22px rgba(31,119,180,0.12);
+  transition:transform var(--transition), box-shadow var(--transition);
+}
+.controls button:hover{ transform:translateY(-3px); box-shadow:0 16px 34px rgba(31,119,180,0.14) }
+.controls button[disabled]{ opacity:0.5; transform:none; box-shadow:none; cursor:not-allowed }
+
+/* Botones export y submit */
+#exportPdfBtn, #exportWordBtn{
+  padding:9px 12px;border-radius:10px;border:none;font-weight:700;cursor:pointer;
+  transition:all var(--transition);
+  background: linear-gradient(180deg,var(--primary-2), #165c9a);
+  color:#fff; box-shadow: 0 8px 18px rgba(31,119,180,0.12);
+}
+#exportWordBtn{ background: linear-gradient(180deg,#2b7aeb,#1f5fa8) }
+#exportPdfBtn:hover, #exportWordBtn:hover{ transform:translateY(-3px) }
+#submitBtn{
+  padding:10px 16px;background:linear-gradient(180deg,var(--success), #1e8a57);
+  color:#fff;border:none;border-radius:10px;cursor:pointer;font-weight:800;
+  box-shadow:0 8px 18px rgba(39,174,96,0.12)
+}
+
+/* Botón eliminar local */
+.btn-remove-action{background:transparent;color:var(--danger);border:1px solid rgba(224,69,69,0.08);padding:8px 10px;border-radius:8px;cursor:pointer}
+
+/* -------------------- FOOTER -------------------- */
+.doc-footer{
+  text-align:center;color:var(--muted);font-size:12px;margin-top:14px;padding:16px;border-top:1px solid rgba(11,51,70,0.03);border-radius:8px;display:flex;align-items:center;justify-content:center;background:transparent;height:88px
+}
+
+/* -------------------- REGLAS PARA EVITAR CORTES ADICIONALES -------------------- */
+/* Permitir que textos largos puedan partirse (wrap) para que no salgan fuera del contenedor */
+.sheet * { overflow-wrap: anywhere; word-break: break-word; }
+
+/* Asegurar que textareas no se colapsen ni oculten contenido */
+textarea{white-space:pre-wrap;}
+
+/* -------------------- RESPONSIVE -------------------- */
+@media (max-width:1000px){
+  .sheet{width:100%; padding:16px}
+  .table-row{flex-wrap:wrap}
+  .cell.small{width:100%;flex:0 0 auto}
+  .cell.large{width:100%;min-width:auto}
+  .row{flex-direction:column}
+  .doc-header{flex-direction:column;align-items:flex-start;gap:10px}
+}
+
+/* -------------------- IMPRESIÓN -------------------- */
+@media print{
+  .controls, #exportPdfBtn, #exportWordBtn, #submitBtn, .btn-remove-action, .action-controls { display:none !important; }
+  .sheet{box-shadow:none;border:none;width:100%}
+  body{padding:0}
+}

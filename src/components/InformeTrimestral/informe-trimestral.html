@@ -1,0 +1,218 @@
+  <!DOCTYPE html>
+  <html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Informe Trimestral UPTap</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://apis.google.com/js/api.js"></script>
+  </head>
+  <body>
+    <header class="modern-header">
+      <div class="logo-container">
+        <img src="lince.png" alt="Logo UPTap" class="logo-img"/>
+        <div class="title-container">
+          <h1>Universidad Politécnica de Tapachula</h1>
+          <h2>Dirección de Planeación Educativa</h2>
+        </div>
+      </div>
+      <div class="form-title">
+        <h1>Registro</h1>
+        <h2>Informe Trimestral</h2>
+      </div>
+    </header>
+
+    <main class="form-container">
+      <form id="informeForm">
+        <!-- Selección de Trimestre -->
+        <fieldset class="quarter-section">
+          <legend><i class="fas fa-calendar-alt"></i> Trimestre: (Marcar con una X)</legend>
+          <div class="radio-group">
+            <label class="radio-option">
+              <input type="radio" name="trimestre" value="1" required />
+              <span class="radio-custom"></span>
+              <span>1 (Ene-Mar)</span>
+            </label>
+            <label class="radio-option">
+              <input type="radio" name="trimestre" value="2" />
+              <span class="radio-custom"></span>
+              <span>2 (Abr-Jun)</span>
+            </label>
+            <label class="radio-option">
+              <input type="radio" name="trimestre" value="3" />
+              <span class="radio-custom"></span>
+              <span>3 (Jul-Sep)</span>
+            </label>
+            <label class="radio-option">
+              <input type="radio" name="trimestre" value="4" />
+              <span class="radio-custom"></span>
+              <span>4 (Oct-Dic)</span>
+            </label>
+          </div>
+        </fieldset>
+
+        <!-- Información básica -->
+        <div class="grid-section">
+          <div class="input-group">
+            <label for="areaTrabajo"><i class="fas fa-building"></i> Área de Trabajo</label>
+            <input type="text" id="areaTrabajo" name="areaTrabajo" required placeholder="Ej. Dirección Académica"/>
+          </div>
+          <div class="input-group">
+            <label for="mesAno"><i class="fas fa-calendar"></i> Mes y Año</label>
+            <input type="month" id="mesAno" name="mesAno" required />
+          </div>
+          <div class="input-group">
+            <label for="pide"><i class="fas fa-certificate"></i> PIDE</label>
+            <input type="text" id="pide" name="pide" placeholder="Código PIDE"/>
+          </div>
+          <div class="input-group">
+            <label for="cacei"><i class="fas fa-certificate"></i> CACEI</label>
+            <input type="text" id="cacei" name="cacei" placeholder="Código CACEI"/>
+          </div>
+        </div>
+
+        <!-- Contenedor de acciones -->
+        <div id="accionesContainer">
+          <!-- Sección de acción (plantilla) -->
+          <section class="action-section">
+            <div class="section-header">
+              <h3><i class="fas fa-tasks"></i> Acción #<span class="action-number">1</span></h3>
+              <button type="button" class="remove-action-btn" title="Eliminar acción">
+                <i class="fas fa-trash-alt"></i>
+              </button>
+            </div>
+            
+            <div class="grid-section">
+              <div class="input-group">
+                <label for="numAccion">Número de Acción</label>
+                <input type="text" name="numAccion[]" required placeholder="Ej. ACC-001"/>
+              </div>
+              <div class="input-group">
+                <label>Especificada en el PAT</label>
+                <div class="radio-group horizontal">
+                  <label class="radio-option">
+                    <input type="radio" name="pat_0" value="SI" required />
+                    <span class="radio-custom"></span>
+                    <span>SI</span>
+                  </label>
+                  <label class="radio-option">
+                    <input type="radio" name="pat_0" value="NO" />
+                    <span class="radio-custom"></span>
+                    <span>NO</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <div class="input-group">
+              <label for="descActividades">Descripción de Actividades Desarrolladas</label>
+              <textarea name="descActividades[]" rows="4" required placeholder="Describa las actividades realizadas..."></textarea>
+            </div>
+
+            <div class="table-responsive">
+              <table class="goals-table">
+                <thead>
+                  <tr>
+                    <th>Programado (P)</th>
+                    <th>Realizado (R)</th>
+                    <th>% Cumplimiento (R/P *100)</th>
+                    <th>Justificación de incumplimiento</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><input type="number" name="prog[]" min="0" step="0.01" /></td>
+                    <td><input type="number" name="real[]" min="0" step="0.01" /></td>
+                    <td><input type="text" name="cumplim[]" readonly class="result-input" /></td>
+                    <td><textarea name="justif[]" rows="2" placeholder="Explique si aplica"></textarea></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="grid-section">
+              <div class="input-group">
+                <label for="impacto">Impacto de la actividad</label>
+                <textarea name="impacto[]" rows="3" placeholder="Describa el impacto generado"></textarea>
+              </div>
+              <div class="input-group">
+                <label>Destacar para informe de Gobierno</label>
+                <div class="radio-group horizontal">
+                  <label class="radio-option">
+                    <input type="radio" name="gov_0" value="SI" required />
+                    <span class="radio-custom"></span>
+                    <span>SI</span>
+                  </label>
+                  <label class="radio-option">
+                    <input type="radio" name="gov_0" value="NO" />
+                    <span class="radio-custom"></span>
+                    <span>NO</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <div class="grid-section">
+              <div class="input-group">
+                <label for="fechaReal">Fecha de Realización</label>
+                <input type="date" name="fechaReal[]" />
+              </div>
+              <div class="input-group">
+                <label for="evidencia">Evidencia fotográfica (enlace Drive)</label>
+                <div class="input-with-icon">
+                  <i class="fas fa-link"></i>
+                  <input type="url" name="evidencia[]" placeholder="https://drive.google.com/..." />
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <div class="action-buttons">
+          <button type="button" id="addAccion" class="btn-add">
+            <i class="fas fa-plus-circle"></i> Agregar Acción
+          </button>
+          <button type="button" id="removeLastAction" class="btn-remove" disabled>
+            <i class="fas fa-minus-circle"></i> Deshacer Acción
+          </button>
+        </div>
+
+        <!-- Firma y recepciones -->
+        <div class="signatures-section">
+          <div class="grid-section">
+            <div class="input-group">
+              <label for="elaboro"><i class="fas fa-user-edit"></i> Elaboró</label>
+              <input type="text" id="elaboro" name="elaboro" placeholder="Nombre completo"/>
+            </div>
+            <div class="input-group">
+              <label for="fechaElab"><i class="fas fa-calendar-day"></i> Fecha de elaboración</label>
+              <input type="date" id="fechaElab" name="fechaElab" />
+            </div>
+            <div class="input-group">
+              <label for="vobo"><i class="fas fa-stamp"></i> Vo.Bo.</label>
+              <input type="text" id="vobo" name="vobo" placeholder="Nombre y cargo"/>
+            </div>
+            <div class="input-group">
+              <label for="fechaRec"><i class="fas fa-calendar-check"></i> Fecha de recepción</label>
+              <input type="date" id="fechaRec" name="fechaRec" />
+            </div>
+          </div>
+        </div>
+
+        <div class="form-actions">
+          <button type="button" id="generatePDF" class="btn-pdf">
+            <i class="fas fa-file-pdf"></i> Exportar a PDF
+          </button>
+          <button type="submit" class="btn-submit">
+            <i class="fas fa-paper-plane"></i> Enviar Informe
+          </button>
+        </div>
+      </form>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+  </html>

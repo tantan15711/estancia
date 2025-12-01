@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<<<<<<< HEAD
 <html lang="es-MX">
 <head>
     <meta charset="UTF-8">
@@ -454,3 +455,244 @@
     <script src="index.js"></script>
 </body>
 </html>
+=======
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Registro Informe Trimestral - UPTap</title>
+  <link rel="stylesheet" href="informe-trimestral.css">
+</head>
+<body>
+  <main class="sheet" id="sheetRoot">
+    <header class="doc-header">
+      <div class="left">
+        <img src="lince.png" alt="UPTap" class="logo">
+        <div class="org">
+          <div class="org-title">Universidad Politécnica de Tapachula</div>
+          <div class="org-sub">Dirección de Planeación Educativa</div>
+        </div>
+      </div>
+      <div class="right">
+        <div class="doc-name">Registro / Informe Trimestral</div>
+        <p><a href="https://www.uptapachula.edu.mx/" target="_blank" rel="noopener noreferrer">www.UPtapachula.edu.mx</a></p>
+      </div>
+    </header>
+
+    <form id="trimestralForm" class="form" autocomplete="off" novalidate>
+      <!-- Trimestre y datos -->
+      <section class="box">
+        <label class="label strong">Trimestre: (Marcar con una X)</label>
+        <div class="row radios">
+          <label class="radio"><input type="radio" name="trimestre" value="1" required><span>1 (Ene-Mar)</span></label>
+          <label class="radio"><input type="radio" name="trimestre" value="2"><span>2 (Abr-Jun)</span></label>
+          <label class="radio"><input type="radio" name="trimestre" value="3"><span>3 (Jul-Sep)</span></label>
+          <label class="radio"><input type="radio" name="trimestre" value="4"><span>4 (Oct-Dic)</span></label>
+        </div>
+
+        <div class="row inputs-2">
+          <div class="field">
+            <label class="label">Área Trabajo</label>
+            <input id="areaTrabajo" name="areaTrabajo" type="text" required>
+          </div>
+          <div class="field">
+            <label class="label">Mes y año</label>
+            <input id="mesAno" name="mesAno" type="month" required>
+          </div>
+        </div>
+
+        <div class="row inputs-2">
+          <div class="field short">
+            <label class="label">PIDE</label>
+            <input id="pide" name="pide" type="text">
+          </div>
+
+          <!-- CACEI: volvemos a mostrar la lista (select) -->
+          <div class="field short">
+            <label class="label">CACEI</label>
+            <select id="caceiSelect" name="cacei">
+              <option value="">Seleccione criterio CACEI...</option>
+              <optgroup label="1. ESTUDIANTES">
+                <option value="1.1">1.1. Admisión</option>
+                <option value="1.2">1.2. Revalidación, equivalencia y reconocimiento de otros estudios</option>
+                <option value="1.3">1.3. Privacidad de los datos del estudiante</option>
+                <option value="1.4">1.4. Integridad académica</option>
+                <option value="1.5">1.5. Trayectoria escolar</option>
+                <option value="1.6">1.6. Asesoría y tutoría</option>
+                <option value="1.7">1.7. Titulación</option>
+                <option value="1.8">1.8. Comportamientos apropiados</option>
+              </optgroup>
+              <!-- (otros optgroups como antes...) -->
+              <optgroup label="8. ÁREA DISCIPLINAR">
+                <option value="8.15">8.15. Ingeniería Industrial</option>
+                <option value="8.17">8.17. Ingeniería Mecánica</option>
+                <option value="8.18">8.18. Mecatrónica</option>
+                <option value="8.25">8.25. Ingeniería Química</option>
+              </optgroup>
+            </select>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contenedor de acciones -->
+      <section id="accionesContainer" class="box actions-container">
+        <!-- PLANTILLA: clonado por JS -->
+        <article class="action-section" data-index="0">
+          <div class="action-head">
+            <div class="action-title">Acción</div>
+            <div class="action-controls">
+              <button type="button" class="btn-remove-action">Eliminar</button>
+            </div>
+          </div>
+
+          <div class="row inputs-2">
+            <div class="field">
+              <label class="label">Número de Acción</label>
+              <input name="numAccion[]" type="text" required placeholder="Ej. ACC-001">
+            </div>
+
+            <div class="field">
+              <label class="label">Acción especificada en el PAT (Marcar con una X)</label>
+              <div class="radios">
+                <label class="radio inline"><input type="radio" name="pat_0" value="SI" required><span>SI</span></label>
+                <label class="radio inline"><input type="radio" name="pat_0" value="NO"><span>NO</span></label>
+              </div>
+            </div>
+          </div>
+
+          <div class="field pat-text" style="display:none">
+            <label class="label">[Indicar la acción especificada en el Programa Anual de Trabajo vigente]</label>
+            <textarea name="patAccionEspecifica[]" rows="3" placeholder="Describa la acción especificada en el PAT..."></textarea>
+            <div class="note">Nota: Si reporta actividades no especificadas en el PAT vigente, describa y marque NO.</div>
+          </div>
+
+          <div class="field">
+            <label class="label">Descripción de Actividades Desarrolladas</label>
+            <textarea name="descActividades[]" rows="4" required placeholder="Redactar de forma precisa las actividades realizadas para alcanzar las metas en el trimestre"></textarea>
+
+            <div class="instruction">
+              En los casos en las que no se haya cumplido al 100% alguna de las metas programadas, redactar las actividades realizadas, así como el porcentaje de avance o una descripción fundamentada del motivo por el cual no se realizaron las actividades correspondientes.
+            </div>
+          </div>
+
+          <!-- Tabla P/R/Cumplimiento/Justificación/Impacto (fila horizontal en escritorio) -->
+          <div class="table-like">
+            <div class="row table-head">
+              
+              <div class="cell small">P (Programado)</div>
+              <div class="cell small">R (Número de acciones realizadas en el trimestre)</div>
+              <div class="cell small">Cumplimiento ((R/P)*100)</div>
+              <div class="cell large">Justificación de incumplimiento (describir motivo o fecha tentativa)</div>
+              <div class="cell large">Impacto de la actividad (beneficiarios/resultados)</div>
+            </div>
+
+            <div class="row table-row">
+              <div class="cell">
+                <input name="metaProg[]" type="text" placeholder="Meta trimestral">
+              </div>
+              <div class="cell small">
+                <input name="programado[]" type="number" min="0" step="1" placeholder="0">
+              </div>
+              <div class="cell small">
+                <input name="realizado[]" type="number" min="0" step="1" placeholder="0">
+              </div>
+              <div class="cell small">
+                <input name="cumplimiento[]" type="text" readonly placeholder="0%">
+              </div>
+              <div class="cell large">
+                <textarea name="justificacionIncumplimiento[]" rows="6" placeholder="Describa motivos o acciones pendientes y fecha tentativa"></textarea>
+              </div>
+              <div class="cell large">
+                <textarea name="impactoActividad[]" rows="6" placeholder="Colocar resultados y beneficiarios"></textarea>
+              </div>
+            </div>
+          </div>
+
+          <div class="row inputs-2">
+            <div class="field">
+              <label class="label">Destacar para informe de Gobierno</label>
+              <div class="radios">
+                <label class="radio inline"><input type="radio" name="gov_0" value="SI" required><span>SI</span></label>
+                <label class="radio inline"><input type="radio" name="gov_0" value="NO"><span>NO</span></label>
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="label">Fecha de Realización</label>
+              <input name="fechaRealizacion[]" type="date">
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label">Evidencia fotográfica</label>
+            <input name="evidenciaFotos[]" type="file" accept="image/*" multiple>
+            <div class="photo-previews"></div>
+            <div class="note">
+              Agregar las fotografías más representativas e Incluir enlace a Drive con carpetas para cada acción
+con fotografías en formato JPG , utilizando el número de acción con la nomenclatura siguiente:
+[NúmTrimeste_NúmAcción]
+
+            </div>
+          </div>
+        </article>
+        <!-- FIN plantilla -->
+      </section>
+
+      <div class="controls">
+        <button type="button" id="addAccion">Agregar Acción</button>
+        <button type="button" id="removeLastAction" disabled>Deshacer Acción</button>
+      </div>
+
+      <!-- Firmas -->
+      <section class="box signatures">
+        <div class="row inputs-3">
+          <div class="field">
+            <label class="label">Elaboró</label>
+            <input id="elaboro" name="elaboro" type="text" required>
+          </div>
+
+          <div class="field">
+            <label class="label">Tapachula, Chiapas, a</label>
+            <input id="fechaDocumento" name="fechaDocumento" type="date" required>
+          </div>
+
+          <div class="field">
+            <label class="label">Vo.Bo.</label>
+            <input id="vobo" name="vobo" type="text">
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">Firma digital</label>
+          <input id="firmaDigital" name="firmaDigital" type="file" accept=".png,.jpg,.jpeg,.xml,.xlm">
+          <div id="firmaPreview" class="firma-preview"></div>
+          <div class="note">Se permite firma o archivo.</div>
+        </div>
+
+        <div class="row submit-row">
+          <button type="button" id="exportPdfBtn">Exportar a PDF</button>
+          <button type="button" id="exportWordBtn">Exportar a Word</button>
+         
+        </div>
+      </section>
+
+      <footer class="doc-footer" id="docFooter">
+        Documento controlado por medios electrónicos. Para uso exclusivo de la Universidad Politécnica de Tapachula — DP-RG.02 Rev.01 08 Abr 2025.
+      </footer>
+    </form>
+  </main>
+
+    <!-- libs para PDF export (ya las tenías) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+  <!-- librerías para generar .docx desde plantilla (PizZip + Docxtemplater + FileSaver) -->
+  <script src="https://cdn.jsdelivr.net/npm/pizzip@3.1.0/dist/pizzip.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/docxtemplater/3.66.3/docxtemplater.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+
+  <!-- tu script principal (debe cargarse después de las librerías anteriores) -->
+  <script src="informe-trimestral.js"></script>
+</body>
+</html>
+>>>>>>> fd05dfcffb682b127e57bf03123a5abd8d5b1f0f

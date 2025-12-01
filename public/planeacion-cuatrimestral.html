@@ -6,8 +6,11 @@
     <title>PLANEACION CUATRIMESTRAL DE ACTIVIDADES - Universidad Politécnica de Tapachula</title>
     <link rel="stylesheet" href="planeacion-cuatrimestral.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<<<<<<< HEAD
     <script src="https://unpkg.com/docx@7.8.2/build/index.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+=======
+>>>>>>> fd05dfcffb682b127e57bf03123a5abd8d5b1f0f
 </head>
 <body>
     <div class="container">
@@ -23,6 +26,7 @@
         <div class="form-group area-periodo">
             <div class="input-group">
                 <label for="area">Área:</label>
+<<<<<<< HEAD
                 <input type="text" id="area" placeholder="Ingrese el área" value="Dirección de Planeación Académica">
             </div>
             
@@ -34,12 +38,27 @@
                     <option value="ene-abr">Enero - Abril</option>
                     <option value="may-ago">Mayo - Agosto</option>
                 </select>
+=======
+                <input type="text" id="area" placeholder="Ingrese el área" value="Dirección Académica">
+            </div>
+            
+            <!-- Reemplaza el bloque existente del periodo por este -->
+            <div class="input-group">
+            <label for="periodo">Periodo:</label>
+            <select id="periodo" aria-label="Periodo de planeación">
+                <option value="">-- Selecciona periodo --</option>
+                <option value="sep-dic">Septiembre - Diciembre</option>
+                <option value="ene-abr">Enero - Abril</option>
+                <option value="may-ago">Mayo - Agosto</option>
+            </select>
+>>>>>>> fd05dfcffb682b127e57bf03123a5abd8d5b1f0f
             </div>
         </div>
         
         <div class="table-container">
             <table id="actividades-table">
                 <colgroup>
+<<<<<<< HEAD
                     <col style="width:70px;">
                     <col style="width:520px;">
                     <col span="16" style="width:50px;">
@@ -65,6 +84,32 @@
                     <th>S1</th><th>S2</th><th>S3</th><th>S4</th>
                     <th>S1</th><th>S2</th><th>S3</th><th>S4</th>
                 </tr>
+=======
+                    <col style="width:70px;">            <!-- NUM -->
+                    <col style="width:520px;">           <!-- DESCRIPCIÓN -->
+                    <!-- 12 subcolumnas (S1..S4 x 3 meses) -->
+                    <col span="12" style="width:50px;">  <!-- cada subcolumna 60px -->
+                    <col style="width:150px;">            <!-- % CUMPLIMIENTO -->
+                    <col style="width:170px;">           <!-- DOCUMENTO -->
+                    <col style="width:110px;">            <!-- ACCIONES -->
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th rowspan="2">NUM</th>
+                        <th rowspan="2">DESCRIPCIÓN DE LA ACTIVIDAD</th>
+                        <th colspan="4">MES 1</th>
+                        <th colspan="4">MES 2</th>
+                        <th colspan="4">MES 3</th>
+                        <th rowspan="2"> %<br>CUMPLIMIENTO</th>
+                        <th rowspan="2">DOCUMENTO<br>PROBATORIO</th>
+                        <th rowspan="2">ACCIONES</th>
+                    </tr>
+                    <tr class="mes-header">
+                        <th>S1</th><th>S2</th><th>S3</th><th>S4</th>
+                        <th>S1</th><th>S2</th><th>S3</th><th>S4</th>
+                        <th>S1</th><th>S2</th><th>S3</th><th>S4</th>
+                    </tr>
+>>>>>>> fd05dfcffb682b127e57bf03123a5abd8d5b1f0f
                 </thead>
                 <tbody id="table-body">
                     <!-- Filas generadas dinámicamente -->
@@ -72,6 +117,7 @@
             </table>
         </div>
         
+<<<<<<< HEAD
         <!-- Tabla para fecha y firmas -->
         <table class="firma-table">
             <tr>
@@ -105,33 +151,76 @@
         <!-- Párrafo informativo inferior -->
         <div class="info-paragraph">
             <p>Una vez completado el formulario, genere el documento Word para obtener una versión imprimible o guárdelo para continuar más tarde. Todos los campos son obligatorios.</p>
+=======
+        <div class="form-group fecha">
+            <div class="input-group">
+                <label for="fecha">Fecha:</label>
+                <input type="date" id="fecha" value="">
+            </div>
+        </div>
+        
+        <div class="form-group firma-section">
+            <div class="firma-box">
+                <label for="elaboro">Nombre y Puesto Elaboró:</label>
+                <input type="text" id="elaboro" placeholder="Nombre y puesto" value="">
+            </div>
+            <div class="firma-box">
+                <label for="vo-bo">Nombre y Puesto Vo. Bo.:</label>
+                <input type="text" id="vo-bo" placeholder="Nombre y puesto" value="">
+            </div>
+        </div>
+        
+        <!-- Párrafo informativo inferior -->
+        <div class="info-paragraph">
+            <p>Una vez completado el formulario, genere el PDF para obtener una versión imprimible o guárdelo para continuar más tarde. Todos los campos son obligatorios.</p>
+>>>>>>> fd05dfcffb682b127e57bf03123a5abd8d5b1f0f
         </div>
         
         <div class="btn-container">
             <button id="add-row" class="btn btn-primary">
                 <i class="fas fa-plus"></i> Agregar Fila
             </button>
+<<<<<<< HEAD
             <button id="generate-word" class="btn btn-success">
                 <i class="fas fa-file-word"></i> Generar Word
+=======
+            <button id="generate-pdf" class="btn btn-success">
+                <i class="fas fa-file-pdf"></i> Generar PDF
+>>>>>>> fd05dfcffb682b127e57bf03123a5abd8d5b1f0f
             </button>
             <button id="save-data" class="btn btn-warning">
                 <i class="fas fa-save"></i> Guardar Datos
             </button>
+<<<<<<< HEAD
+=======
+            <button id="load-data" class="btn btn-info">
+                <i class="fas fa-folder-open"></i> Cargar Datos
+            </button>
+>>>>>>> fd05dfcffb682b127e57bf03123a5abd8d5b1f0f
             <button id="clear-all" class="btn btn-danger">
                 <i class="fas fa-trash"></i> Limpiar Todo
             </button>
         </div>
+<<<<<<< HEAD
 
         <div class="loading" id="loading">
             <div class="spinner"></div>
             <p>Generando documento Word...</p>
         </div>
+=======
+>>>>>>> fd05dfcffb682b127e57bf03123a5abd8d5b1f0f
         
         <footer class="footer">
             <p><strong>Documento controlado por medios electrónicos.</strong></p>
             <p>Puede ser establecido en Universidad Politécnica de Tapachula</p>
+<<<<<<< HEAD
         </footer>
     </div>  
+=======
+            <p><a href="https://www.uptapachula.edu.mx/" target="_blank">www.uptapachula.edu.mx/</a></p>
+        </footer>
+    </div>
+>>>>>>> fd05dfcffb682b127e57bf03123a5abd8d5b1f0f
 
     <!-- Modal para confirmaciones -->
     <div id="confirm-modal" class="modal">
@@ -155,6 +244,16 @@
         </div>
     </div>
 
+<<<<<<< HEAD
+=======
+    <!-- Scripts corregidos para PDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script>
+        // Solución para el problema de referencia de jsPDF
+        window.jsPDF = window.jspdf.jsPDF;
+    </script>
+>>>>>>> fd05dfcffb682b127e57bf03123a5abd8d5b1f0f
     <script src="planeacion-cuatrimestral.js"></script>
 </body>
 </html>

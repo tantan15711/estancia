@@ -21,9 +21,12 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+<<<<<<< HEAD
 
 WARP.md
 .ps1
 .vscode/
 AppData/
 *.bin
+=======
+>>>>>>> fd05dfcffb682b127e57bf03123a5abd8d5b1f0f
